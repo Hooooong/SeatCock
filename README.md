@@ -33,7 +33,7 @@
 
 1. Navigation Page 구현 [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Activity/MainActivity.java)
 
-  1.1. `DrawerLayout`, `NavigationView` 를 이용하여 구현
+  1. `DrawerLayout`, `NavigationView` 를 이용하여 구현
 
     - 공지가 발생했을 경우에 `NavigationView` 를 업데이트
 
@@ -102,7 +102,7 @@
 
   - SDK 설정 : [kakao SDK 설정](https://developers.kakao.com/docs/android/user-management)
 
-  2.1. Session 을 통해 회원 유무 체크
+  1. Session 을 통해 회원 유무 체크
 
     - `onCreate()` 호출 시 Session, SessionCallback 설정
 
@@ -219,7 +219,7 @@
     }
     ```
 
-  2.2. 회원이 아닐 경우에는 서버에 회원가입 요청
+  2. 회원이 아닐 경우에는 서버에 회원가입 요청
 
     -  Kakao 서버에 회원 가입 요청
 
