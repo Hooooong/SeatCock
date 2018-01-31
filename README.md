@@ -16,10 +16,10 @@
 
 ## 개발 환경
 
-개발 언어 : Java, PHP</br>
-개발 환경 : JDK 1.8, SDK(Min 21, Target 23), Apache 2.2, PHP 5.3</br>
-데이터베이스 : MySQL 5.5</br>
-개발 도구 : Eclipse Mars, Android Studio 2.1.2, SQLyog
+- 개발 언어 : Java, PHP
+- 개발 환경 : JDK 1.8, SDK(Min 21, Target 23), Apache 2.2, PHP 5.3
+- 데이터베이스 : MySQL 5.5
+- 개발 도구 : Eclipse Mars, Android Studio 2.1.2, SQLyog
 
 ## 화면
 
