@@ -534,6 +534,6 @@
 
 ## 문서
 
-  - [발표용 ppt](https://github.com/Hooooong/SeatCock/blob/master/pdf/%EC%84%B1%EA%B2%B0%EB%8C%80%ED%95%99%EA%B5%90_%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C_%EC%9D%B4%ED%9D%A5%EA%B8%B0.pdf)
+  - [발표용 ppt](https://github.com/Hooooong/SeatCock/blob/master/ppt/%EC%A0%84%EA%B3%B5%EC%A2%85%ED%95%A9%EC%84%A4%EA%B3%84_%EC%B5%9C%EC%A2%85PT_%EC%9D%B4%ED%9D%A5%EA%B8%B0.pptx)
 
   - [문서](https://github.com/Hooooong/SeatCock/blob/master/pdf/%EC%84%B1%EA%B2%B0%EB%8C%80%ED%95%99%EA%B5%90_%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C_%EC%9D%B4%ED%9D%A5%EA%B8%B0.pdf)
