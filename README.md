@@ -12,7 +12,7 @@
 ## 소개
 
 ‘자리콕’은 점포의 자리 정보를 언제, 어디서든 사용자가 원하는 기능에 따라 정보를 제공하는 소프트웨어 시스템입니다.</br>
-‘자리콕’을 사용하는 다양한 분야의 점포를 검색하여 지도로 확인할 수 있고, 좌석 정보 뿐 아니라 점포의 정보, 방문자의 리뷰 등 다양한 컨텐츠를 제공합니다. 또한 사용자는 원하는 점포를 예약할 수 있고 대기시간을 활용 할 수 있도록 대기번호를 모바일로 발급하는 기능을 제공합니다.
+‘자리콕’을 사용하는 다양한 분야의 점포를 검색하여 지도로 확인할 수 있고, 좌석 정보 뿐 아니라 점포의 정보, 방문자의 리뷰 등 다양한 컨텐츠를 제공합니다. 또한 사용자는 원하는 점포를 예약할 수 있고 대기시간을 활용 할 수 있도록 대기번호를 모바일로 발급하는 기능을 제공합니다.</br>([Youtube](https://www.youtube.com/watch?v=FJ0Bc63beD0))
 
 ## 개발 환경
 
@@ -102,7 +102,7 @@
 
     - SDK 설정 : [kakao SDK 설정](https://developers.kakao.com/docs/android/user-management)
 
-    1. Session 을 통해 회원 유무 체크
+    1. Session 을 통해 회원 유무 체크 [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Activity/LoginActivity.java)
 
         - `onCreate()` 호출 시 Session, SessionCallback 설정
 
@@ -219,7 +219,7 @@
         }
         ```
 
-    2. 회원이 아닐 경우에는 서버에 회원가입 요청
+    2. 회원이 아닐 경우에는 서버에 회원가입 요청  [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Activity/SignUpActivity.java)
 
         -  Kakao 서버에 회원 가입 요청
 
@@ -278,13 +278,253 @@
         });
         ```
 
-3. HTTP 통신
+3. HTTP 통신 [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Server/MainData.java)
 
-4. Daum Map
+    - `HttpUrlConnection`, `AsyncTask` 을 통해 PHP 와 통신(JSON)
+
+    - Callback 처리는 `Handler` 를 통해 처리
+
+    - ~~왜 이때는 Retrofit2 를 몰랐을까 싶다. Callback 처리와 예외 처리를 복잡하게 구현하여 유지보수가 힘들다.~~
+
+    ```java
+    /**
+     * http://14.63.213.157/dongimg/mainpage_v4.0.php 에서
+     * 데이터 값을 불러와 JSON 파싱하기
+     */
+    public void getData(double latitude, double longitude) {
+        class GetData extends AsyncTask<String, Void, String> {
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+                try {
+                    String latitude = (String) params[0];
+                    String longitude = (String) params[1];
+
+                    String data = URLEncoder.encode("usr_lati", "UTF-8") + "=" + URLEncoder.encode(latitude, "UTF-8");
+                    data += "&" + URLEncoder.encode("usr_longi", "UTF-8") + "=" + URLEncoder.encode(longitude, "UTF-8");
+
+                    URL url = new URL(URL);
+
+                    URLConnection conn = url.openConnection();
+                    //IllegalArgumentException
+                    conn.setConnectTimeout(CONNECTION_TIMEOUT);
+                    conn.setReadTimeout(READ_TIMEOUT);
+
+                    conn.setDoOutput(true);
+                    OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+
+                    wr.write(data);
+                    wr.flush();
+
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    return sb.toString();
+                }catch (IllegalArgumentException e ){
+                    return new String("failOfTimeOut");
+                } catch (IOException e) {
+                    return new String("Exception: " + e.getMessage());
+                }
+            }
+            @Override
+            protected void onPostExecute(String result) {
+                myJSONString = result;
+
+                // 결과에 따른 값들을 Handler 에 담아서 보낸다.
+                if(result.trim().equals("failOfTimeOut")){
+                    handler.sendEmptyMessage(STORE_NETWORK_FAILER);
+                }else if(result.trim().equals("failure")) {
+                    handler.sendEmptyMessage(STORE_NETWORK_FAILER);
+                }else{
+                    handler.sendEmptyMessage(STORE_NETWORK_SUCCESS);
+                }
+
+            }
+        }
+
+        GetData getData = new GetData();
+        getData.execute(Double.toString(latitude), Double.toString(longitude));
+    }
+
+    /**
+     * getData()에서 파싱한 데이터를
+     * storeArrayList 에 데이터를 저장하기
+     * 초기 1회 실행
+     */
+    public ArrayList<Store> setData() {
+        try {
+            JSONObject jsonObj = new JSONObject(myJSONString);
+            jsonArray = jsonObj.getJSONArray(TAG_RESULTS);
+
+            storeArrayList = new ArrayList<>();
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject c = jsonArray.getJSONObject(i);
+
+                Store store = new Store();
+                store.setStoreId(c.getString(TAG_STORE_ID));
+                store.setStoreName(c.getString(TAG_STORE_NAME));
+                store.setReviewConunt(Integer.parseInt(c.getString(TAG_REVIEW_COUNT)));
+                store.setGpa(Float.parseFloat(c.getString(TAG_AVG_GPA)));
+                store.setSeatTotalCountSituation(Integer.parseInt(c.getString(TAG_TOTAL_SEAT)));
+                store.setSeatUseCountSituation(Integer.parseInt(c.getString(TAG_USE_SEAT)));
+                store.setStoreDistance(Integer.parseInt(c.getString(TAG_DISTANCE)));
+                store.setNormalReservation(c.getString(TAG_NOR_CHK));
+                store.setZoneReservation(c.getString(TAG_ZONE_CHK));
+                store.setImageResourceId(c.getString(TAG_PIC_DATA));
+                store.setStoreStartTime(c.getString(TAG_START));
+                store.setStoreFinishTime(c.getString(TAG_FINISH));
+                store.setStoreMaxTime(c.getString(TAG_MAXTIME));
+                store.setStoreAddress(c.getString(TAG_ADDR));
+                store.setX(c.getString(TAG_X));
+                store.setY(c.getString(TAG_Y));
+
+                storeArrayList.add(store);
+            }
+        } catch (Exception e) {
+            handler.sendEmptyMessage(STORE_NETWORK_FAILER);
+        }
+        return storeArrayList;
+    }
+    ```
+
+4. Daum Map [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Activity/LocationActivity.java)
+
+    - SDK 설정 : [Daum Map](apis.map.daum.net/android/guide/)
+
+    1. Layout 설정
+
+    ```xml
+    <RelativeLayout
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </RelativeLayout>
+    ```
+
+    2. Map 설정
+
+    ```java
+    mapView = new MapView(this);
+    // 각종 속성 설정
+    mapView.setMapTilePersistentCacheEnabled(true);
+    mapView.setHDMapTileEnabled(true);
+    // Map Key 설정
+    mapView.setDaumMapApiKey(MapKey);
+    mapViewContainer.addView(mapView);
+
+    // 현재 위치 설정
+    this.displayLocationMap(locationPresenter.getLatitude(),locationPresenter.getLongitude());
+    ```
 
 5. FCM
 
-6. Google Place
+    - Firebase Console 설정 : [Firebase Console](https://console.firebase.google.com/?hl=ko&pli=1)
+
+    1. `AndroidManifest.xml` 설정
+
+        - FCM 을 송/수신하려면 Service 를 등록해야 한다.
+
+        ```xml
+        <!-- [START firebase_service] -->
+        <service
+            android:name=".Util.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- [START firebase_iid_service] -->
+        <service
+            android:name=".Util.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        ```
+
+    2. `FirebaseInstanceIdService` 설정 [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Util/MyFirebaseInstanceIDService.java)
+
+        - App 을 실행시킬때 Notification 에 필요한 Device Token 을 Update 시켜준다.
+
+        - Token 이 갱신 될 때 DB에 저장시킨다. (~~AsyncTask 가 아닌 OkHttpClient 를 사용했다. 왜...~~)
+
+        ```java
+        // 앱을 처음 실행시킬때
+        // [START refresh_token]
+        @Override
+        public void onTokenRefresh() {
+
+            //Token 값 가지고오기
+            String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+            sendRegistrationToServer(refreshedToken);
+        }
+
+        public void sendRegistrationToServer(String token) {
+
+            OkHttpClient client = new OkHttpClient();
+
+            // Token 값을 RequestBody 에 저장
+            RequestBody body = new FormBody.Builder()
+                    .add("Token", token)
+                    .build();
+
+            // request
+            // DB 에 Tokne 을 갱신시킨다.
+            Request request = new Request.Builder()
+                    .url("http://14.63.213.157/dongimg1/test/register.php")
+                    .post(body)
+                    .build();
+            try {
+                client.newCall(request).execute();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        ```
+
+    3. `FirebaseMessagingService` 설정 [[소스코드]](https://github.com/Hooooong/SeatCock/blob/master/app/src/main/java/sku/jvj/seatcock/Util/MyFirebaseMessagingService.java)
+
+        - App 이 화면에 보이지 않을 때 알림이 올 경우 `onMessageReceived()`가 호출된다.
+
+        - `RemoteMessage` 의 값에 따라 Code 설정
+
+        ```java
+        @Override
+        public void onMessageReceived(RemoteMessage remoteMessage) {
+          // Check if message contains a data payload.
+          if (remoteMessage.getData().size() > 0) {
+              /**
+               * 알람 값 확인해서 시작
+               * pushRequestCode = 0   : 일반 실행
+               * pushRequestCode = 100 : 예약관련
+               * pushRequestCode = 200 : 대기번호 관련
+               * pushRequsetCode = 300 : 공지사항 관련
+               */
+              int pushRequestCode = Integer.parseInt(remoteMessage.getData().get("pushRequestCode"));
+
+              if(pushRequestCode == 100){
+                // 생략
+              }else if(pushRequestCode == 200){
+                // 생략
+              }else if(pushRequestCode == 300){
+                // 생략
+              }
+          }
+        }
+        ```
+
+6. Google Location, Place 사용
 
 7. MVP Architecture 사용
 
