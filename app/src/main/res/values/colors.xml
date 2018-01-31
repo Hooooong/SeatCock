@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffb300</color>
+    <color name="colorPrimaryDark">#ffa000</color>
+    <color name="colorAccent">#8bc34a</color>
+
+    <!--FAB 배경색-->
+    <color name="colorFAB1">#E040FB</color>
+    <color name="colorFAB2">#2196F3</color>
+    <color name="colorFAB3">#ffa000</color>
+
+    <color name ="colorLightOrange">#FEEBC2</color>
+    <color name="colorWhite">#FFFF</color>
+    <color name="colorOpacityWhite">#96ffffff</color>
+    <color name="colorLightYellow">#FFF4E5</color>
+    <color name="colorYellow">#ffb300</color>
+    <color name="colorOpacityYellow">#beffb300</color>
+    <color name="colorGray">#ADADAD</color>
+    <color name="colorLightGray">#CDCDCD</color>
+    <color name="colorOrange">#FFA000</color>
+    <color name="colorGreen">#89C348</color>
+    <color name="colorWhiteText">#FFFF</color>
+    <color name="colorBlackText">#000</color>
+
+</resources>

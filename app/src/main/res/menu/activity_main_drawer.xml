@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="정보">
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_camera"
+                android:title="나의 정보" />
+            <item
+                android:id="@+id/nav_gallery"
+                android:title="즐겨 찾기" />
+            <item
+                android:id="@+id/nav_slideshow"
+                android:title="예약 정보" />
+            <item
+                android:id="@+id/nav_manage"
+                android:title="대기 정보" />
+        </group>
+    </item>
+
+    <item android:title="환경 설정">
+        <menu>
+            <item
+                android:id="@+id/nav_user"
+                android:icon="@drawable/ic_person_black"
+                android:title="로그인" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="설정" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_help_black"
+                android:title="도움말" />
+        </menu>
+    </item>
+
+</menu>

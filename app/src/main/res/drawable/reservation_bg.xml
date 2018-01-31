@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 예약존 좌석 미사용중일때 이미지-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <stroke android:color="#d7f03b1f" android:width="2dp"/>
+    <solid android:color="#94b4a793"/>
+</shape>

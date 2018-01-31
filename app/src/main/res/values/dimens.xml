@@ -1,0 +1,68 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">13dp</dimen>
+    <dimen name="nav_header_height">180dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- recycle_storecarditems에 대한 리소스 -->
+    <dimen name="activity_right_margin">10dp</dimen>
+    <dimen name="activity_left_margin">10dp</dimen>
+    <dimen name="rating_padding">5dp</dimen>
+    <dimen name="card_height">250dip</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="TitleText_size">18sp</dimen>
+    <dimen name="SubText_size">12sp</dimen>
+
+    <!-- 텍스트 양옆 마진-->
+    <dimen name="text_margin">5dp</dimen>
+
+    <!-- 모든 객체마다 사이 사이 간격-->
+    <!-- 텍스트 top 에 간격을 줘서 떨어져보이게 할라고-->
+    <dimen name="beside_margin">8dp</dimen>
+
+    <!-- SearchView -->
+    <dimen name="search_view_inset">5dp</dimen>
+    <dimen name="sliding_search_view_header_height">250dp</dimen>
+
+    <!-- - - - - - - - - - - - - - - - - 텍스트 사이즈 분류 - - - - - - - - - - - - - - -   -->
+    <!-- 점포이름 -->
+    <dimen name ="large_textsize">18dp</dimen>
+
+    <!-- 기본적인 텍스트크기 (리뷰, 평점, 상세정보 내용 등등 )-->
+    <dimen name ="normal_textsize">14dp</dimen>
+
+    <!-- 점포 주소, 현재위치 등등 작은글씨들 -->
+    <dimen name ="small_textsize">12dp</dimen>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- Text Style-->
+
+    <!-- 점포 상세정보나 설명등 작은 텍스트 스타일-->
+    <style name="textSize_Small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 회원가입 창에서 이름, 번호, 주민번호 등 글씨 -->
+    <style name="text_normal">
+        <item name= "android:layout_width">wrap_content</item>
+        <item name= "android:layout_height">wrap_content</item>
+        <item name= "android:gravity">center_vertical</item>
+        <item name= "android:layout_marginTop">@dimen/beside_margin</item>
+        <item name= "android:textSize">14sp</item>
+    </style>
+
+    <!-- 아이콘 -->
+    <style name ="common_icon">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+</resources>

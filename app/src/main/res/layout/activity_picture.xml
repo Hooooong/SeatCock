@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlackText">
+
+    <sku.jvj.seatcock.Activity.PictureViewPager
+        android:id="@+id/picture_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </sku.jvj.seatcock.Activity.PictureViewPager>
+
+    <TextView
+        android:id="@+id/pageCountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:textColor="@color/colorWhite"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/closeBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_close_white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

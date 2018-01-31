@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightYellow"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!--윗부분 레이아웃-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- 좌석현황이랑 좌석별 설명 나와있는 레이아웃-->
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ratingbar_bg"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <RelativeLayout
+                android:layout_width="160dp"
+                android:layout_height="26dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/yellowcircle_bg"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/seat_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="좌석 현황 "
+                    android:gravity="center"
+                    android:textColor="@color/colorBlackText"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/seatUseCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/seat_text"
+
+                    android:textColor="@color/colorOrange"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/seatTotalCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/seatUseCountTextView"
+
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/reservation2_bg"
+                    android:textSize="@dimen/normal_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="예약가능좌석"
+                    android:textColor="@color/colorBlackText"
+                    android:textSize="@dimen/normal_textsize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/use_bg"
+                    android:textSize="@dimen/normal_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="사용중"
+                    android:textColor="@color/colorBlackText"
+                    android:textSize="@dimen/normal_textsize" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/nouse_bg"
+                    android:textSize="@dimen/normal_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="미사용중"
+                    android:textColor="@color/colorBlackText"
+                    android:textSize="@dimen/normal_textsize" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- 대기번호받기랑 예약하기버튼 있는 레이아웃-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 대기번호받기 활성화버튼 -->
+            <LinearLayout
+                android:id="@+id/ticketLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/grarycircle_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:clickable="false"
+                >
+
+                <ImageView
+                    android:id="@+id/ticektImageView"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_waitnumbutton_gray" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"
+                    android:text="대기번호받기"
+                    android:textColor="@color/colorBlackText" />
+
+            </LinearLayout>
+
+            <!-- 일반예약하기 활성화버튼 -->
+            <LinearLayout
+                android:id="@+id/normalReservationLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/whitecircle_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/image_calendar" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"
+                    android:text="일반예약하기"
+                    android:textColor="@color/colorBlackText"
+                    />
+
+
+            </LinearLayout>
+
+            <!-- 좌석예약하기 활성화버튼 -->
+            <LinearLayout
+                android:id="@+id/zoneReservationLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/whitecircle_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_seat" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"
+                    android:text="좌석예약하기"
+                    android:textColor="@color/colorBlackText"
+                    />
+            </LinearLayout>
+
+            <!-- 예약불가 활성화버튼 -->
+            <LinearLayout
+                android:id="@+id/noReservationLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/grarycircle_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_noreservation" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="3dp"
+                    android:gravity="center"
+                    android:text="예약 불가"
+                    android:textColor="@color/colorBlackText"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 좌석 보여주는 화면 -->
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/verticalScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="false">
+            <HorizontalScrollView
+                android:id="@+id/horizontalScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:id="@+id/seatRelativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </HorizontalScrollView>
+        </ScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

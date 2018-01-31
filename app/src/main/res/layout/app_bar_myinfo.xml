@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.MyInfoActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/myInfoBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"
+                android:orientation="vertical">
+                <!-- 프로필 사진-->
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:background="@color/colorWhite">
+
+                    <!-- bottom-most child, with bottom-right alignment -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="top|center"
+                        android:background="@color/colorYellow" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userImageView"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="bottom|center"
+                        app:civ_border_color="@android:color/white"
+                        app:civ_border_width="3dp"
+                        />
+                    
+                    <TextView
+                        android:id="@+id/userProfileRefresh"
+                        android:layout_width="30dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="bottom|center"
+                        android:background="@drawable/ic_refresh2"
+                        android:layout_marginLeft="34dp"
+                        android:layout_marginBottom="3dp"
+                        android:padding="6dp"
+                        android:textColor="@color/colorYellow" />
+
+
+                </FrameLayout>
+
+                <!-- 프로필사진 아래에 나의정보를 포함하는 레이아웃-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userNickNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/beside_margin"
+                        android:textColor="@color/colorBlackText"
+                        android:textSize="@dimen/large_textsize" />
+
+
+                    <!-- 나의정보 네줄 포함하는 레이아웃-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:layout_marginBottom="@dimen/beside_margin"
+                        android:layout_marginRight="@dimen/beside_margin"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <!-- 나의정보(이름) 한줄 레이아웃-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/ic_person" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:text="이름 "
+                                android:textColor="@color/colorBlackText"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/userNameTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:textColor="@color/colorGray"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <!-- 나의정보(생년월일) 한줄 레이아웃-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/ic_favorite" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:text="성별 "
+                                android:textColor="@color/colorBlackText"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/userSexTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:textColor="@color/colorGray"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <!-- 나의정보(생년월일) 한줄 레이아웃-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/ic_cake" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:text="생년월일 "
+                                android:textColor="@color/colorBlackText"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/userBirthdayTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:textColor="@color/colorGray"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <!-- 나의정보(전화번호) 한줄 레이아웃-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/ic_phone" />
+
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:text="전화번호"
+                                android:textColor="@color/colorBlackText"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/userPhoneNumberTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/beside_margin"
+                                android:textColor="@color/colorGray"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/myInfoToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_myinfo" />
+</android.support.design.widget.CoordinatorLayout>

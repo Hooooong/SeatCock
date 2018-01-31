@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:elevation="2dp"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_notifications"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/noticeListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlackText"/>
+
+        <TextView
+            android:id="@+id/noticeListDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/noticeListUpdate"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="10dp"
+        android:textColor="@color/colorOrange"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/noticeListImage"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="center|right"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGray"/>
+</LinearLayout>

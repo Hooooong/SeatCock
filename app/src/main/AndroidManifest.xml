@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="sku.jvj.seatcock">
+
+    <!--Daum 지도API 추가-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- 데이터 및 Wi-Fi 상황 체크 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS."/>
+
+    <!-- 외장 메모리 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".Util.GlobalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- [START firebase_service] -->
+        <service
+            android:name=".Util.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- [START firebase_iid_service] -->
+        <service
+            android:name=".Util.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <intent-filter>
+            <action android:name="OPEN_ACTIVITY_1" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
+        <!-- 로고 화면 화면 -->
+        <activity
+            android:name=".Activity.IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 메인 보여주는 화면 -->
+        <activity
+            android:name=".Activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!-- 위치 변경하는 화면 -->
+        <activity
+            android:name=".Activity.LocationActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!-- 광고 화면 -->
+        <activity
+            android:name=".Activity.AdActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!-- 검색 화면 -->
+        <activity
+            android:name=".Activity.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!-- 점포 정보 화면 -->
+        <activity
+            android:name=".Activity.StoreActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <!-- 사진 정보 화면 -->
+        <activity
+            android:name=".Activity.PictureActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 리뷰 작성 화면 -->
+        <activity
+            android:name=".Activity.ReviewWriteActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 공지 사항 화면 -->
+        <activity
+            android:name=".Activity.NoticeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 로그인 화면 -->
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 회원가입 화면 -->
+        <activity
+            android:name=".Activity.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 나의 정보 화면 -->
+        <activity
+            android:name=".Activity.MyInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 나의 예약 화면 -->
+        <activity
+            android:name=".Activity.MyReservationActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 점포 위치 화면 -->
+        <activity
+            android:name=".Activity.MapActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+
+        <!-- 검색 결과 화면 -->
+        <activity
+            android:name=".Activity.SearchResultActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 좌석 화면 -->
+        <activity
+            android:name=".Activity.SeatActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 예약 화면 -->
+        <activity
+            android:name=".Activity.ReservationActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
+
+        <!-- 결제 영수증 화면 화면 -->
+        <activity
+            android:name=".Activity.BillActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+            android:screenOrientation="portrait"/>
+
+        <!-- 대기번호 화면 화면 -->
+        <activity
+            android:name=".Activity.WaitingTicketActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"
+            android:screenOrientation="portrait"/>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="ba44c487e3e245d8aa9f9aa5a9a1a809" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCfgSIlocZLwtQLfdj6gHMnSWz32lcV1xw" />
+    </application>
+</manifest>

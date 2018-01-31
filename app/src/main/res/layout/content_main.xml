@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.melnykov.fab.ObservableScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/observaleScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/colorLightYellow"
+    tools:context=".Activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/storeCardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:descendantFocusability="beforeDescendants">
+        <RelativeLayout
+            android:id="@+id/advertisingViewPagerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 광고 사진 보여주기 -->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/advertisingViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:clickable="true"/>
+
+            <!-- 도트 보여주기 -->
+            <com.matthewtamlin.sliding_intro_screen_library.DotIndicator
+                android:id="@+id/Ad_indicator_ad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/advertisingViewPager"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/myGPSAddressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/advertisingViewPagerLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/locationSearchTextView"
+                    android:background="@drawable/whitecircle_bg"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="위치 설정"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true">
+                <TextView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_place_black"
+                    />
+                <TextView
+                    android:id="@+id/myGPSAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/storeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/myGPSAddressLayout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <!-- 검색결과 없을 때-->
+        <RelativeLayout
+            android:id="@+id/noSearchLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/myGPSAddressLayout"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp">
+            <ImageView
+                android:id="@+id/noStoreImageView"
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:background="@drawable/img_nocontext"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/noStoreImageView"
+                android:text="현재위치에 대한 점포가 없습니다"
+                android:textSize="20sp"
+                android:textColor="@color/colorBlackText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview"
+                android:text="위치설정을 눌러 설정해주세요"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:textColor="@color/colorGray"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.melnykov.fab.ObservableScrollView>
+

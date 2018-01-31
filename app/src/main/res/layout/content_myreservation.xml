@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activity.MyReservationActivity">
+
+    <!-- 선택하면 @color/colorGreen으로 바뀌고 텍스트도 하얀색으로 -->
+    <LinearLayout
+        android:id="@+id/myReservationLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@color/colorWhite"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/nowReservation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="현재 예약" />
+
+        <TextView
+            android:id="@+id/beforeReservation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="지난 예약" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/myReservationRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- 예약 없을 때-->
+        <RelativeLayout
+            android:id="@+id/noReservationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:layout_above="@+id/noReservationTextView"
+                android:layout_centerInParent="true"
+                android:background="@drawable/img_nocontext" />
+            <TextView
+                android:id="@+id/noReservationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorGreen"
+                android:textSize="20sp"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

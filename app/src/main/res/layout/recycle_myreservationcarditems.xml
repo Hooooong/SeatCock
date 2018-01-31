@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/zhchkImageView"
+                android:layout_width="33dp"
+                android:layout_height="45dp"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--점포 이름, 점포 주소, 테이블 번호-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/beside_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/storeNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/text_margin"
+                    android:textColor="@color/colorBlackText"
+                    android:singleLine="true"
+                    android:textSize="@dimen/large_textsize" />
+
+                <TextView
+                    android:id="@+id/storeAddressTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/small_textsize"/>
+
+                <TextView
+                    android:id="@+id/storePhoneNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:autoLink="phone"
+                    android:textSize="@dimen/small_textsize"/>
+
+
+                <!-- zone -->
+                <LinearLayout
+                    android:id="@+id/zoneLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:text="Table No."
+                        android:textColor="@color/colorOrange"
+                        android:textSize="@dimen/large_textsize" />
+
+                    <TextView
+                        android:id="@+id/seatNumberTextVIew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_margin"
+                        android:textColor="@color/colorOrange"
+                        android:textSize="@dimen/large_textsize"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 이름, 전화번호, 예약일자+시간, 인원수, 버튼-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <!-- 이름 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/text_normal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_green_check" />
+
+                    <TextView
+                        style="@style/text_normal"
+                        android:layout_width="70dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:text="이름"
+                        android:textColor="@color/colorBlackText"
+                        android:textSize="@dimen/normal_textsize" />
+
+                    <TextView
+                        android:id="@+id/reservationNameTextView"
+                        style="@style/text_normal"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:textSize="@dimen/normal_textsize" />
+
+                </LinearLayout>
+                <!-- 전화번호 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/text_normal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_green_check" />
+
+                    <TextView
+                        style="@style/text_normal"
+                        android:layout_width="70dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:text="전화번호"
+                        android:textColor="@color/colorBlackText"
+                        android:textSize="@dimen/normal_textsize" />
+
+                    <TextView
+                        android:id="@+id/reservationPhoneNumberTextView"
+                        style="@style/text_normal"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:textSize="@dimen/normal_textsize" />
+
+                </LinearLayout>
+                <!--예약 날자-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/text_normal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_green_check" />
+
+                    <TextView
+                        style="@style/text_normal"
+                        android:layout_width="70dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:text="예약 일자"
+                        android:textColor="@color/colorBlackText"
+                        android:textSize="@dimen/normal_textsize" />
+
+
+                    <!-- 예약한 날짜 보여주는 텍스트뷰-->
+                    <TextView
+                        android:id="@+id/reservationDateTextView"
+                        style="@style/text_normal"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:textSize="@dimen/normal_textsize" />
+                </LinearLayout>
+
+                <!--예약 시간-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/text_normal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_green_check" />
+
+                    <TextView
+                        style="@style/text_normal"
+                        android:layout_width="70dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:text="예약 시간"
+                        android:textColor="@color/colorBlackText"
+                        android:textSize="@dimen/normal_textsize" />
+
+                    <!-- 예약한 시간 보여주는 텍스트뷰-->
+                    <TextView
+                        android:id="@+id/reservationTimeTextView"
+                        style="@style/text_normal"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:textSize="@dimen/normal_textsize" />
+
+                </LinearLayout>
+
+                <!--인원수-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <ImageView
+                        style="@style/text_normal"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_green_check" />
+
+                    <TextView
+                        style="@style/text_normal"
+                        android:layout_width="70dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:text="인원"
+                        android:textColor="@color/colorBlackText"
+                        android:textSize="@dimen/normal_textsize" />
+
+                    <TextView
+                        android:id="@+id/reservationPersonTextView"
+                        style="@style/text_normal"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="@dimen/beside_margin"
+                        android:textSize="@dimen/normal_textsize" />
+
+                </LinearLayout>
+                <!-- 예약 완료 체크-->
+                <Button
+                    android:id="@+id/reservationStateBtn"
+                    android:layout_width="91dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/beside_margin"
+                    android:background="@color/colorGreen"
+                    android:gravity="center"
+                    android:text="예약완료"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="seatView" type="id">12345</item>
+    <item name="storeReservationTime" type="id">123000</item>
+</resources>

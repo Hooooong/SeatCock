@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="#FAFAFA"
+        android:elevation="3dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/recentlySearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="최근 검색어" />
+
+        <TextView
+            android:id="@+id/popularitySearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center"
+            android:text="인기 검색어" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/searchWordListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#FAFAFA"
+        android:elevation="3dp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/noSearchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/textview"
+            android:layout_centerInParent="true"
+            android:background="@drawable/img_nocontext" />
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="검색정보가 없습니다"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlackText"
+            android:textSize="20sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview"
+            android:layout_centerInParent="true"
+            android:text="다양한 검색을 해보세요"
+            android:textAlignment="center"
+            android:textColor="@color/colorGray"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>

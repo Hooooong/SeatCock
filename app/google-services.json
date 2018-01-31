@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "319615092797",
+    "firebase_url": "https://jbjpush.firebaseio.com",
+    "project_id": "jbjpush",
+    "storage_bucket": "jbjpush.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319615092797:android:7b12107af24939f3",
+        "android_client_info": {
+          "package_name": "dong.push.com.jbjpush_web_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319615092797-2ji25d7usv7ievk81haaht0g4qbq6gg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhk3nS1n1qtUTvCp9UwJTjx9fFvOdGCMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319615092797:android:b7e48079fb3e13d5",
+        "android_client_info": {
+          "package_name": "dong.push.com.jbjpush_web_v3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319615092797-2ji25d7usv7ievk81haaht0g4qbq6gg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhk3nS1n1qtUTvCp9UwJTjx9fFvOdGCMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319615092797:android:9c72a346654f1d52",
+        "android_client_info": {
+          "package_name": "sku.jvj.rts_material"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319615092797-2ji25d7usv7ievk81haaht0g4qbq6gg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhk3nS1n1qtUTvCp9UwJTjx9fFvOdGCMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319615092797:android:0a88d1f9b1fec099",
+        "android_client_info": {
+          "package_name": "sku.jvj.seatcock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319615092797-2ji25d7usv7ievk81haaht0g4qbq6gg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhk3nS1n1qtUTvCp9UwJTjx9fFvOdGCMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

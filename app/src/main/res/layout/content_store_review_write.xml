@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightYellow"
+    android:orientation="vertical"
+    android:padding="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!-- 평점 Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ratingbar_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/beside_margin"
+        android:paddingLeft="10dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/text_margin"
+            android:text="소중한 의견을 남겨주세요"
+            android:textColor="@color/colorOrange"
+            android:textSize="@dimen/normal_textsize" />
+
+        <!-- 맛 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ratingbar_title1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="맛 "
+                android:textSize="@dimen/large_textsize" />
+
+            <RatingBar
+                android:id="@+id/indicator_ratingbar1"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dip"
+                android:clickable="true"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="0.1" />
+
+            <TextView
+                android:id="@+id/indicator_ratingbar1_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.5"
+                android:textColor="@color/colorYellow"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+        <!-- 서비스 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ratingbar_title2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="서비스 "
+                android:textSize="@dimen/large_textsize" />
+
+            <RatingBar
+                android:id="@+id/indicator_ratingbar2"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dip"
+                android:clickable="true"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="0.1" />
+
+            <TextView
+                android:id="@+id/indicator_ratingbar2_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.5"
+                android:textColor="@color/colorYellow"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <!-- 청결 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ratingbar_title3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="청결 "
+                android:textSize="@dimen/large_textsize" />
+
+            <RatingBar
+                android:id="@+id/indicator_ratingbar3"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dip"
+                android:clickable="true"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="0.1" />
+
+            <TextView
+                android:id="@+id/indicator_ratingbar3_TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.5"
+                android:textColor="@color/colorYellow"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--내용 작성 부분-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/beside_margin"
+        android:background="@color/colorWhite">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+                <!--이미지-->
+                <LinearLayout
+                    android:id="@+id/pictureLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/reviewImageView1"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/reviewImageView2"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/reviewImageView3"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <!--Text 입력란-->
+                <EditText
+                    android:id="@+id/reviewEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@null"
+                    android:hint="리뷰를 작성하세요!"
+                    android:textColorHint="@color/colorLightGray"
+                    android:textSize="@dimen/normal_textsize" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!--확인 및 사진 불러오기-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/addPhotoImageView"
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ic_add_a_photo_black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/InsertReviewTextView"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="등록"
+                    android:textSize="@dimen/large_textsize" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+
+
+

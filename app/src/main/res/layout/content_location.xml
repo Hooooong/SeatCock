@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="top">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:background="@color/colorOpacityWhite">
+
+                <ImageView
+                    android:id="@+id/locationImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_gps_fixed_white"/>
+                <TextView
+                    android:id="@+id/locationTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/locationImageView"
+                    android:text="위치검색중입니다...."
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:id="@+id/locationRefreshImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_refresh_white"/>
+
+            </RelativeLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:weightSum="2"
+               android:orientation="horizontal">
+               <Button
+                   android:id="@+id/locationAddressSearchButton"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="5dp"
+                   android:text="주소검색"
+                   android:background="@color/colorOpacityWhite"/>
+               <Button
+                   android:id="@+id/locationAreaSearchButton"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="5dp"
+                   android:text="지역검색"
+                   android:background="@color/colorOpacityWhite"/>
+           </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_pin_drop_black"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/locationBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorOpacityYellow"
+            android:text="위치지정 완료"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

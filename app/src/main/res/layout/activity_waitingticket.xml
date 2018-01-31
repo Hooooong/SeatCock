@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/beside_margin"
+    android:weightSum="10">
+
+    <!-- 발급버튼 빼고 전체 레이아웃-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:layout_weight="9">
+
+        <!-- 위에 대기번호표시된 연노랑 부분-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorLightYellow"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:text="대기번호"
+                android:textSize="22dp"
+                android:textColor="@color/colorBlackText"
+                android:layout_gravity="center|top"
+                />
+            <!--  대기번호 동그라미 -->
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="21dp"
+                android:background="@drawable/circle_bg"/>
+
+            <TextView
+                android:id="@+id/waitingNumberTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28dp"
+                android:textColor="@color/colorOrange"
+                android:layout_marginTop="21dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대기중 인원 :"
+                android:textColor="@color/colorOrange"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/waitingPersonTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/colorOrange"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/colorOrange"
+                android:text="명"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="["
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:textColor="@color/colorOrange"
+                android:text="약"
+                android:textSize="18dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/waitingTimeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/colorOrange"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="]"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGray"/>
+
+        <!-- 전체 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="vertical">
+
+            <!-- 이름 한줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/beside_margin">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_person"
+                    android:padding="@dimen/beside_margin"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="@dimen/text_margin" />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_textsize"
+                    android:textStyle="bold"
+                    android:padding="@dimen/beside_margin"
+                    android:text="이름"/>
+
+                <TextView
+                    android:id="@+id/userNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"></View>
+
+            <!-- 연락처 한줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/beside_margin">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_phone"
+                    android:padding="@dimen/beside_margin"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="@dimen/text_margin" />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_textsize"
+                    android:textStyle="bold"
+                    android:padding="@dimen/beside_margin"
+                    android:text="연락처"/>
+                <TextView
+                    android:id="@+id/userPhoneNumberTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"></View>
+
+            <!-- 인원 한줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/beside_margin">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_member"
+                    android:padding="@dimen/beside_margin"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="@dimen/text_margin"
+                    />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_textsize"
+                    android:textStyle="bold"
+                    android:padding="@dimen/beside_margin"
+
+                    android:text="인원"/>
+
+                <!-- numberpicker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+
+                    <ImageView
+                        android:id="@+id/minus"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_minus"/>
+
+                    <TextView
+                        android:id="@+id/personNumberTextView"
+                        android:layout_width="40dp"
+                        android:layout_height="24dp"
+                        android:gravity="center"
+                        android:textSize="16dp"/>
+
+                    <ImageView
+                        android:id="@+id/plus"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/ic_plus"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"></View>
+
+            <!-- 날짜선택 한줄 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/beside_margin">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/ic_date"
+                    android:padding="@dimen/beside_margin"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="@dimen/text_margin" />
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_textsize"
+                    android:textStyle="bold"
+                    android:padding="@dimen/beside_margin"
+                    android:text="날짜"/>
+
+                <!-- 현재날짜 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/todayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLightGray"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLightGray"/>
+        </LinearLayout>
+
+        <!-- 경고문 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorOrange"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="대기번호 차례에 점포에 방문하지 않을 시,\n 자동으로 다음 번호로 전환되오니 \n 시간 엄수하여 방문해주세요 ^^"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/waitingBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorYellow"
+        android:text="발급하기"
+        android:layout_weight="1"/>
+
+</LinearLayout>
