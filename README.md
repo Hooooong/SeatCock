@@ -21,6 +21,14 @@
 - 데이터베이스 : MySQL 5.5
 - 개발 도구 : Eclipse Mars, Android Studio 2.1.2, SQLyog
 
+## 프로젝트 관리
+
+-	개발 프로세스 : 일일 회의를 통해 개발해야 할 것들을 관리
+-	문서화 : 한글 파일로 작성
+-	Communication : 카카오톡을 통해 대화
+-	소스 관리 : 팀장이 주관하여 관리
+-	회의 : 일일 미팅(회의록 작성) 및 주간 회고
+
 ## 화면
 
 ![screenshot1](https://github.com/Hooooong/SeatCock/blob/master/image/screen1.jpg)
